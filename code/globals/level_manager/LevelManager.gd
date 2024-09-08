@@ -45,7 +45,7 @@ func find_level_by_order(order):
 		return null
 
 func get_levels() -> Array:
-	var path: String = 'res://app/scenes/levels'
+	var path: String = 'res://code/scenes/levels'
 	var dir: DirAccess = DirAccess.open(path)
 	dir.list_dir_begin()
 	var levels: Array = []

@@ -1,15 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://8uubf14nn7c8"]
 
-[ext_resource type="Script" path="res://app/scenes/MainMenuButton.gd" id="1"]
-[ext_resource type="Script" path="res://app/scenes/LevelSelect.gd" id="2"]
-[ext_resource type="Script" path="res://app/scenes/NextPage.gd" id="3"]
-[ext_resource type="Script" path="res://app/scenes/LastPage.gd" id="4"]
+[ext_resource type="Script" path="res://code/globals/MainMenuButton.gd" id="1"]
+[ext_resource type="Script" path="res://code/globals/LevelSelect.gd" id="2"]
+[ext_resource type="Script" path="res://code/globals/NextPage.gd" id="3"]
+[ext_resource type="Script" path="res://code/globals/LastPage.gd" id="4"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2")
 
 [node name="PagesContainer" type="Control" parent="."]
@@ -17,10 +19,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
-offset_top = 72.0
-offset_right = -80.0
-offset_bottom = -88.0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = -10.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -36,19 +38,19 @@ script = ExtResource("1")
 
 [node name="Next Page" type="Button" parent="."]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 456.0
-offset_right = 431.0
-offset_bottom = 487.0
+offset_left = 95.0
+offset_top = 158.0
+offset_right = 182.0
+offset_bottom = 189.0
 text = "Next Page"
 script = ExtResource("3")
 
 [node name="Last Page" type="Button" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 456.0
-offset_right = 146.0
-offset_bottom = 487.0
+offset_left = 5.0
+offset_top = 156.0
+offset_right = 87.0
+offset_bottom = 187.0
 text = "Last Page"
 script = ExtResource("4")
 

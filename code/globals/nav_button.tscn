@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource type="Script" path="res://app/scenes/nav_button.gd" id="1"]
+[ext_resource type="Script" path="res://code/globals/nav_button.gd" id="1"]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.52549, 0.592157, 0.780392, 1 )
