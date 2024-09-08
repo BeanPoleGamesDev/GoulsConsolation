@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbob7e02euxpt"]
+
+[ext_resource type="Texture2D" uid="uid://csddn1bgbxbbe" path="res://assets/DynamiteParamedics-EndScreen.png" id="1_hxw1l"]
+[ext_resource type="PackedScene" uid="uid://dol605qulc5gl" path="res://app/objects/GuiLayer.tscn" id="2_kb88f"]
+
+[node name="Thanksforplaying" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("1_hxw1l")
+centered = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_kb88f")]
