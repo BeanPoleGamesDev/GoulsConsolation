@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-const move_distance = 1000.0
+const move_distance = 1
+@export var tiles : TileMap
 
 func _physics_process(delta: float) -> void:
-	
 	if Input.is_action_just_pressed("ui_up"):
 		velocity.y = -move_distance
 	if Input.is_action_just_pressed("ui_down"):
