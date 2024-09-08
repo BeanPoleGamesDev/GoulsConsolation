@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4xl4vpmpt1ms"]
+
+[ext_resource type="Texture2D" uid="uid://ce2ljhc5pq2i5" path="res://icon.svg" id="1_och15"]
+
+[node name="npc_navigation_body" type="CharacterBody2D"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_och15")

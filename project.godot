@@ -19,6 +19,14 @@ config/icon="res://icon.svg"
 Nav="*res://code/globals/Nav.tscn"
 LevelManager="*res://code/globals/level_manager/LevelManager.gd"
 
+[display]
+
+window/size/viewport_width=192
+window/size/viewport_height=192
+window/size/window_width_override=512
+window/size/window_height_override=512
+window/stretch/mode="viewport"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
