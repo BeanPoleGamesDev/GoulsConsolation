@@ -14,6 +14,14 @@ config/name="GoulsConsolation"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=192
+window/size/viewport_height=192
+window/size/window_width_override=512
+window/size/window_height_override=512
+window/stretch/mode="viewport"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
