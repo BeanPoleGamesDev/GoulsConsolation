@@ -14,6 +14,11 @@ config/name="GoulsConsolation"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Nav="*res://code/globals/Nav.tscn"
+LevelManager="*res://code/globals/level_manager/LevelManager.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
