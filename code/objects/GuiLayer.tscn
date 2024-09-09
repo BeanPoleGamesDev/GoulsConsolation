@@ -27,6 +27,7 @@ text = "Restart"
 script = ExtResource("1_gfufi")
 
 [node name="LevelSelectBtn" type="Button" parent="MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
