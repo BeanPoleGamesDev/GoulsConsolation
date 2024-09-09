@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4dbfbnm5vtpk"]
+
+[ext_resource type="FontFile" uid="uid://bivukml8j0m84" path="res://assets/choco_shake/Choco Shake.ttf" id="1_6a1mi"]
+[ext_resource type="Script" path="res://code/objects/restart_btn.gd" id="1_gfufi"]
+[ext_resource type="Script" path="res://code/objects/level_select_btn.gd" id="3_2314q"]
+
+[node name="GuiLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RestartBtn" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_6a1mi")
+theme_override_font_sizes/font_size = 6
+text = "Restart"
+script = ExtResource("1_gfufi")
+
+[node name="LevelSelectBtn" type="Button" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_6a1mi")
+theme_override_font_sizes/font_size = 6
+text = "Level Select"
+script = ExtResource("3_2314q")
+
+[connection signal="pressed" from="MarginContainer/RestartBtn" to="MarginContainer/RestartBtn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/LevelSelectBtn" to="MarginContainer/LevelSelectBtn" method="_on_pressed"]

@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="GoulsConsolation"
+run/main_scene="res://code/scenes/levels/level1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Nav="*res://code/globals/Nav.tscn"
+LevelManager="*res://code/globals/level_manager/LevelManager.gd"
 
 [display]
 

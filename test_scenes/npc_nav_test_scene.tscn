@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://l14yq5n4q53d"]
 
-[ext_resource type="PackedScene" uid="uid://cgavw63jqaoe" path="res://code/objects/tiles.tscn" id="1_swy6y"]
+[ext_resource type="PackedScene" uid="uid://d3ge4fqo36qbb" path="res://code/objects/tiles.tscn" id="1_swy6y"]
 [ext_resource type="PackedScene" uid="uid://b4xl4vpmpt1ms" path="res://npc_navigation_body.tscn" id="2_sp8mm"]
 
 [node name="npc_nav_test_scene" type="Node2D"]
