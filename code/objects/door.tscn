@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://lnrwhna4uvxh"]
+
+[ext_resource type="PackedScene" uid="uid://bygy80h7vste6" path="res://code/objects/Activatable.tscn" id="1_7a3b8"]
+[ext_resource type="Texture2D" uid="uid://cqvyhrur06fht" path="res://assets/door.png" id="2_1ly8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1omhm"]
+atlas = ExtResource("2_1ly8d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fhuy"]
+atlas = ExtResource("2_1ly8d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trawa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1omhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fhuy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Door" instance=ExtResource("1_7a3b8")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_trawa")
