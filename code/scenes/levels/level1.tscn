@@ -36,8 +36,5 @@ tiles = NodePath("../tiles")
 [node name="Lever" parent="." index="6" instance=ExtResource("5_26dbj")]
 position = Vector2(56, 56)
 
-[node name="CharacterBody2D" parent="." index="7" groups=["npc"]]
-position = Vector2(24, 24)
-
 [node name="Node2D" parent="." index="9" instance=ExtResource("7_17si0")]
 position = Vector2(176, 176)

@@ -8,6 +8,7 @@ var direction = Vector2()
 @export var follower_or_not = false
 @export var ray_size = 278
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+var safteyOffset = 8
 
 var is_dead = false
 
@@ -59,9 +60,26 @@ func pathfind_to_player():
 
 func pathfind_away_from_player():
 	var ray_cast_collision_point = ray_cast_2d.get_collision_point()
-	var ray_cast_collision_safe_offset = ray_cast_collision_point.direction_to(global_position) * 20
-	var nav_point = ray_cast_collision_point + ray_cast_collision_safe_offset
+	var ray_cast_collision_safe_offset = ray_cast_collision_point.direction_to(global_position) * safteyOffset
+	var nav_point = ray_cast_collision_point + ray_cast_collision_safe_offset;
+	print(nav_point)
+
+	var direction = nav_point.direction_to(self.global_position)
+	if $Left.is_colliding() or $Right.is_colliding():
+		direction.x = 0
+		direction.y 
+		print(direction)
+		nav_point = direction*32 + global_position
+
+		
+	if $Up.is_colliding() or $Down.is_colliding():
+		direction.y = 0
+		nav_point = direction*32 + global_position
+		
+		
+	print(nav_point)
+	print('')
+		
 	
 	current_nav_path = tiles.get_navigation_path(global_position,nav_point)
-	print(current_nav_path)
 	

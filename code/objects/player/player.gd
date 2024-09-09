@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const move_distance = 1000
+const move_distance = 500
 @export var tiles : TileMap
 
 func _physics_process(delta: float) -> void:

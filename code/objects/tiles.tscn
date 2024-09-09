@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3ge4fqo36qbb"]
 
-[ext_resource type="Texture2D" uid="uid://dsnjhl4mgrjmq" path="res://assets/walls-auto-tile-2x2-8x8.png" id="1_v2ur4"]
+[ext_resource type="Texture2D" uid="uid://bw87x8evbahe3" path="res://assets/walls-auto-tile-2x2-8x8.png" id="1_v2ur4"]
 [ext_resource type="Script" path="res://code/objects/tiles.gd" id="2_mlnuc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38koc"]
@@ -63,5 +63,4 @@ sources/0 = SubResource("TileSetAtlasSource_38koc")
 
 [node name="tiles" type="TileMapLayer"]
 tile_set = SubResource("TileSet_nmv84")
-collision_visibility_mode = 1
 script = ExtResource("2_mlnuc")
