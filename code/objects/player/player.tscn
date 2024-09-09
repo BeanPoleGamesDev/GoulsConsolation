@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://64eehtertrwg"]
+[gd_scene load_steps=9 format=3 uid="uid://64eehtertrwg"]
 
 [ext_resource type="Script" path="res://code/objects/player/player.gd" id="1_oopp1"]
 [ext_resource type="Texture2D" uid="uid://bplcnqs34gcnr" path="res://assets/GhostGirl-Sheet.png" id="2_b2lsw"]
@@ -35,7 +35,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srrj0"]
 size = Vector2(12, 16)
 
-[node name="player" type="CharacterBody2D" groups=["npc"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayntj"]
+radius = 15.0
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_oopp1")
@@ -46,3 +49,8 @@ sprite_frames = SubResource("SpriteFrames_2fk2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_srrj0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ayntj")
