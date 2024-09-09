@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ge4fqo36qbb" path="res://code/objects/tiles.tscn" id="1_b8qnd"]
 [ext_resource type="PackedScene" uid="uid://dmqkrtlm06m5q" path="res://code/objects/player/character_body_2d.tscn" id="2_3b86k"]
 [ext_resource type="PackedScene" uid="uid://c4dbfbnm5vtpk" path="res://code/objects/GuiLayer.tscn" id="3_m2yyb"]
+[ext_resource type="PackedScene" uid="uid://dmqkrtlm06m5q" path="res://code/objects/player/player.tscn" id="2_3b86k"]
 
 [node name="base_level" type="Node2D"]
 

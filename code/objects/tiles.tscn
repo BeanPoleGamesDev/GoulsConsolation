@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3ge4fqo36qbb"]
 
-[ext_resource type="Texture2D" uid="uid://dx08gtv7jjrps" path="res://assets/2x2-auto-tile-template.png" id="1_rx0wx"]
+[ext_resource type="Texture2D" uid="uid://c2rsavvagco0c" path="res://assets/walls-auto-tile-2x2-8x8.png" id="1_v2ur4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38koc"]
-texture = ExtResource("1_rx0wx")
+texture = ExtResource("1_v2ur4")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
