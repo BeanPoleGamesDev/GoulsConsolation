@@ -4,10 +4,16 @@ var nav_close_to_point_radius = 0.5
 @export var tiles : TileMapLayer
 var current_nav_path = []
 var direction = Vector2()
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	pass
 
+func complete_murder():
+	queue_free()
+
+func kill():
+	animation_player.play("kill")
 
 func _physics_process(delta: float) -> void:
 	

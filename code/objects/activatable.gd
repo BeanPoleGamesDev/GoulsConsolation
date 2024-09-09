@@ -2,6 +2,8 @@ extends Node2D
 
 @export var activated:bool = false
 
+@export var defaultActive:bool = false
+
 @export var activeFrame:int = 1
 
 @export var inactiveFrame:int = 0

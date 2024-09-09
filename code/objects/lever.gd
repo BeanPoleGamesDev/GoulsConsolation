@@ -4,14 +4,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
 func _physics_process(delta: float) -> void:
 	var area = $AnimatedSprite2D/PressureArea
 	
@@ -22,10 +21,3 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.set_frame_and_progress(1,1)
 		if activatedNode:
 			activatedNode.activated = !activatedNode.defaultActive
-	else:
-		$AnimatedSprite2D.set_frame_and_progress(0,1)
-		if activatedNode:
-			activatedNode.activated = activatedNode.defaultActive
-
-
-#	

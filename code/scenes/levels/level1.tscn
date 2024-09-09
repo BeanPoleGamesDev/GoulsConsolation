@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://itmjpv6ydg75"]
+[gd_scene load_steps=7 format=4 uid="uid://itmjpv6ydg75"]
 
 [ext_resource type="PackedScene" uid="uid://cggqmnp34q5d4" path="res://code/scenes/base_level.tscn" id="1_vws8o"]
 [ext_resource type="PackedScene" uid="uid://328svyc042h6" path="res://code/objects/pressure_plate.tscn" id="2_1nxjv"]
 [ext_resource type="PackedScene" uid="uid://lnrwhna4uvxh" path="res://code/objects/door.tscn" id="3_51drc"]
+[ext_resource type="PackedScene" uid="uid://c5alvkkcaqqae" path="res://code/objects/spikes.tscn" id="4_2b0c3"]
 [ext_resource type="PackedScene" uid="uid://b4xl4vpmpt1ms" path="res://npc_navigation_body.tscn" id="4_loyb3"]
+[ext_resource type="PackedScene" uid="uid://lrswed4wln7h" path="res://code/objects/lever.tscn" id="5_26dbj"]
 
 [node name="base_level" instance=ExtResource("1_vws8o")]
 metadata/order = 1
@@ -15,12 +17,23 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAAAAAEAAAABAAMAAAAAAAIAAAABAAM
 position = Vector2(56, 40)
 activatedNode = NodePath("../Door")
 
-[node name="Door" parent="." index="2" instance=ExtResource("3_51drc")]
+[node name="Spikelate2" parent="." index="2" node_paths=PackedStringArray("activatedNode") instance=ExtResource("2_1nxjv")]
+position = Vector2(57, 24)
+activatedNode = NodePath("../Spikes")
+
+[node name="Door" parent="." index="3" instance=ExtResource("3_51drc")]
 position = Vector2(72, 88)
 
-[node name="CharacterBody2D" parent="." index="3"]
-position = Vector2(24, 24)
+[node name="Spikes" parent="." index="4" instance=ExtResource("4_2b0c3")]
+position = Vector2(72, 40)
+defaultActive = true
 
 [node name="npc_navigation_body" parent="." index="5" node_paths=PackedStringArray("tiles") instance=ExtResource("4_loyb3")]
 position = Vector2(112, 115)
 tiles = NodePath("../tiles")
+
+[node name="Lever" parent="." index="6" instance=ExtResource("5_26dbj")]
+position = Vector2(56, 56)
+
+[node name="CharacterBody2D" parent="." index="7"]
+position = Vector2(24, 24)

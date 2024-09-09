@@ -30,8 +30,8 @@ window/stretch/mode="viewport"
 
 [global_group]
 
-npc_movement=""
 npc=""
+npc_movement=""
 
 [input]
 
