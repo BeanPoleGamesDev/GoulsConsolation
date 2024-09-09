@@ -33,9 +33,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srrj0"]
-size = Vector2(16, 16)
+size = Vector2(12, 16)
 
 [node name="player" type="CharacterBody2D" groups=["npc"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_oopp1")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

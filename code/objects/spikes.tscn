@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5alvkkcaqqae"]
+[gd_scene load_steps=8 format=3 uid="uid://c5alvkkcaqqae"]
 
 [ext_resource type="PackedScene" uid="uid://bygy80h7vste6" path="res://code/objects/Activatable.tscn" id="1_8bt4m"]
 [ext_resource type="Texture2D" uid="uid://brjmsksuugrst" path="res://assets/spikes.png" id="2_0gfj7"]
+[ext_resource type="Script" path="res://code/objects/death_area.gd" id="3_2ecf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lng33"]
 atlas = ExtResource("2_0gfj7")
@@ -25,8 +26,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sse06"]
+size = Vector2(14.5, 14.5)
+
 [node name="Spikes" instance=ExtResource("1_8bt4m")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_trawa")
+
+[node name="DeathArea" type="Area2D" parent="." index="1"]
+script = ExtResource("3_2ecf3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" index="0"]
+shape = SubResource("RectangleShape2D_sse06")

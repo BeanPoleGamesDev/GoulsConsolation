@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lnrwhna4uvxh"]
+[gd_scene load_steps=8 format=3 uid="uid://lnrwhna4uvxh"]
 
 [ext_resource type="PackedScene" uid="uid://bygy80h7vste6" path="res://code/objects/Activatable.tscn" id="1_7a3b8"]
 [ext_resource type="Texture2D" uid="uid://cqvyhrur06fht" path="res://assets/door.png" id="2_1ly8d"]
+[ext_resource type="Script" path="res://code/objects/door.gd" id="3_2qk8c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1omhm"]
 atlas = ExtResource("2_1ly8d")
@@ -25,8 +26,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylf1r"]
+size = Vector2(16, 16)
+
 [node name="Door" instance=ExtResource("1_7a3b8")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_trawa")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." index="1"]
+script = ExtResource("3_2qk8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ylf1r")
