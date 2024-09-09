@@ -16,6 +16,8 @@ func _physics_process(delta: float) -> void:
 	var area = $AnimatedSprite2D/PressureArea
 	
 	var overlappingBodies = area.get_overlapping_bodies()
+	if (overlappingBodies.is_empty()):
+		return
 	var overlappingBody = overlappingBodies.front()
 	
 	if (overlappingBody and overlappingBody.is_in_group('npc')):

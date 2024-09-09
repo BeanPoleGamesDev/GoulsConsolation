@@ -8,7 +8,6 @@ var direction = Vector2()
 @export var follower_or_not = false
 @export var ray_size = 278
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
 var is_dead = false
 
@@ -25,7 +24,6 @@ func kill():
 func _physics_process(delta: float) -> void:
 	var player = get_tree().get_nodes_in_group("player")[0]
 	ray_cast_2d.target_position = player.global_position.direction_to(global_position) * ray_size
-	sprite_2d_2.global_position = ray_cast_2d.get_collision_point()
 
 func _player_update():
 	if is_dead:

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5alvkkcaqqae" path="res://code/objects/spikes.tscn" id="4_2b0c3"]
 [ext_resource type="PackedScene" uid="uid://b4xl4vpmpt1ms" path="res://npc_navigation_body.tscn" id="4_loyb3"]
 [ext_resource type="PackedScene" uid="uid://lrswed4wln7h" path="res://code/objects/lever.tscn" id="5_26dbj"]
-[ext_resource type="PackedScene" uid="uid://cj5xc5btryj8k" path="res://win_box.tscn" id="7_17si0"]
+[ext_resource type="PackedScene" path="res://win_box.tscn" id="7_17si0"]
 
 [node name="base_level" instance=ExtResource("1_vws8o")]
 metadata/order = 1
@@ -36,10 +36,8 @@ tiles = NodePath("../tiles")
 [node name="Lever" parent="." index="6" instance=ExtResource("5_26dbj")]
 position = Vector2(56, 56)
 
-[node name="CharacterBody2D" parent="." index="7"]
+[node name="CharacterBody2D" parent="." index="7" groups=["npc"]]
 position = Vector2(24, 24)
-collision_layer = 1
-collision_mask = 1
 
 [node name="Node2D" parent="." index="9" instance=ExtResource("7_17si0")]
 position = Vector2(176, 176)
