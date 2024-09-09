@@ -64,20 +64,19 @@ func pathfind_away_from_player():
 	var nav_point = ray_cast_collision_point + ray_cast_collision_safe_offset;
 	print(nav_point)
 
-	var direction = nav_point.direction_to(self.global_position)
+	var direction = -(nav_point.direction_to(self.global_position)*32)
 	if $Left.is_colliding() or $Right.is_colliding():
 		direction.x = 0
-		direction.y 
 		print(direction)
-		nav_point = direction*32 + global_position
+		nav_point = direction + global_position
 
 		
 	if $Up.is_colliding() or $Down.is_colliding():
 		direction.y = 0
-		nav_point = direction*32 + global_position
+		nav_point = direction + global_position
 		
 		
-	print(nav_point)
+	print(nav_point,global_position)
 	print('')
 		
 	
