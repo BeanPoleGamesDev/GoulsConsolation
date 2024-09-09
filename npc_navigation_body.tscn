@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4xl4vpmpt1ms"]
+[gd_scene load_steps=3 format=3 uid="uid://b4xl4vpmpt1ms"]
 
+[ext_resource type="Script" path="res://npc_navigation_body.gd" id="1_gvs3i"]
 [ext_resource type="Texture2D" uid="uid://ce2ljhc5pq2i5" path="res://icon.svg" id="1_och15"]
 
-[node name="npc_navigation_body" type="CharacterBody2D"]
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="npc_navigation_body" type="CharacterBody2D" groups=["npc_movement"]]
+script = ExtResource("1_gvs3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
