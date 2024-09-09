@@ -57,7 +57,6 @@ _data = {
 }
 
 [node name="npc_navigation_body" type="CharacterBody2D" groups=["npc", "npc_movement"]]
-scale = Vector2(0.936556, 1.07938)
 script = ExtResource("1_gvs3i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["npc"]]

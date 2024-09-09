@@ -35,10 +35,9 @@ func index_points():
 			move_to_position(current_nav_path.front())
 
 
-func move_to_position(new_position):
+func move_to_position(new_position:Vector2):
 	global_position = new_position
 	print(velocity)
-	velocity = Vector2.ZERO
 
 func pathfind_to_mouse():
 	
