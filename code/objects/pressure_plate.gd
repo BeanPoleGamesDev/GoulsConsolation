@@ -13,5 +13,19 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	var area = $Sprite2D/PressureArea
+	var area = $AnimatedSprite2D/PressureArea
+	
+	var overlappingBodies = area.get_overlapping_bodies()
+	var overlappingBody = overlappingBodies.front()
+	
+	if (overlappingBody):
+		$AnimatedSprite2D.set_frame_and_progress(1,1)
+		if activatedNode:
+			activatedNode.activated = true
+	else:
+		$AnimatedSprite2D.set_frame_and_progress(0,1)
+		if activatedNode:
+			activatedNode.activated = false
+
+
 #	

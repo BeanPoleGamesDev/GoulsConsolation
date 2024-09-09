@@ -1,19 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://328svyc042h6"]
+[gd_scene load_steps=7 format=3 uid="uid://328svyc042h6"]
 
 [ext_resource type="Script" path="res://code/objects/pressure_plate.gd" id="1_4xeea"]
 [ext_resource type="Texture2D" uid="uid://ii77e0775tk8" path="res://assets/pressure-plate.png" id="1_hyvpx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_120r0"]
+atlas = ExtResource("1_hyvpx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fii7y"]
+atlas = ExtResource("1_hyvpx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cok4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_120r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fii7y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oa4y0"]
-size = Vector2(32, 32)
+size = Vector2(12, 12)
 
 [node name="PressurePlate" type="Node2D"]
 script = ExtResource("1_4xeea")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_hyvpx")
+sprite_frames = SubResource("SpriteFrames_6cok4")
 
-[node name="PressureArea" type="Area2D" parent="Sprite2D"]
+[node name="PressureArea" type="Area2D" parent="AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/PressureArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/PressureArea"]
 shape = SubResource("RectangleShape2D_oa4y0")
