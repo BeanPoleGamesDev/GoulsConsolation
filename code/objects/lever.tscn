@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://lrswed4wln7h"]
+
+[ext_resource type="Script" path="res://code/objects/lever.gd" id="1_y74o5"]
+[ext_resource type="Texture2D" uid="uid://bw4ufp3ap83lw" path="res://assets/leaver.png" id="2_8yp08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vwb2"]
+atlas = ExtResource("2_8yp08")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkpty"]
+atlas = ExtResource("2_8yp08")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cok4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vwb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkpty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oa4y0"]
+size = Vector2(12, 12)
+
+[node name="Lever" type="Node2D"]
+script = ExtResource("1_y74o5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_6cok4")
+
+[node name="PressureArea" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/PressureArea"]
+shape = SubResource("RectangleShape2D_oa4y0")
