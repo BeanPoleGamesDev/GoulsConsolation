@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://evq41a87qpn3"]
+[gd_scene load_steps=4 format=4 uid="uid://cggqmnp34q5d4"]
 
 [ext_resource type="PackedScene" uid="uid://d3ge4fqo36qbb" path="res://code/objects/tiles.tscn" id="1_b8qnd"]
+[ext_resource type="PackedScene" uid="uid://dmqkrtlm06m5q" path="res://code/objects/player/character_body_2d.tscn" id="2_3b86k"]
+[ext_resource type="PackedScene" uid="uid://c4dbfbnm5vtpk" path="res://code/objects/GuiLayer.tscn" id="3_m2yyb"]
 [ext_resource type="PackedScene" uid="uid://dmqkrtlm06m5q" path="res://code/objects/player/player.tscn" id="2_3b86k"]
 
 [node name="base_level" type="Node2D"]
@@ -11,3 +13,5 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAMAAAAAAAEAAAABAAMAAAAAAAIAAAABAAM
 [node name="CharacterBody2D" parent="." node_paths=PackedStringArray("tiles") instance=ExtResource("2_3b86k")]
 position = Vector2(69, 70)
 tiles = NodePath("../tiles")
+
+[node name="GuiLayer" parent="." instance=ExtResource("3_m2yyb")]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=4 uid="uid://t0sb2uk16rj8"]
+[gd_scene load_steps=2 format=4 uid="uid://itmjpv6ydg75"]
 
-[ext_resource type="PackedScene" uid="uid://evq41a87qpn3" path="res://code/scenes/base_level.tscn" id="1_vws8o"]
+[ext_resource type="PackedScene" uid="uid://cggqmnp34q5d4" path="res://code/scenes/base_level.tscn" id="1_vws8o"]
 
 [node name="base_level" instance=ExtResource("1_vws8o")]
+metadata/order = 1
 
 [node name="tiles" parent="." index="0"]
 position = Vector2(0, 1)

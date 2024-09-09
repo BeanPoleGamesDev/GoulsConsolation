@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://buefo6lkbo07a"]
+[gd_scene load_steps=4 format=3 uid="uid://buefo6lkbo07a"]
 
 [ext_resource type="Script" path="res://code/globals/nav.gd" id="1_i2pr6"]
+[ext_resource type="PackedScene" uid="uid://itmjpv6ydg75" path="res://code/scenes/levels/level1.tscn" id="2_qpxjy"]
 
 [sub_resource type="Resource" id="Resource_c3c4d"]
 metadata/__load_path__ = "res://app/scenes/thanksforplaying.tscn"
 
 [node name="Nav" type="Node"]
 script = ExtResource("1_i2pr6")
+views = Array[PackedScene]([ExtResource("2_qpxjy")])
 thanksforplaying = SubResource("Resource_c3c4d")
