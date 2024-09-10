@@ -61,24 +61,70 @@ func pathfind_to_player():
 func pathfind_away_from_player():
 	var ray_cast_collision_point = ray_cast_2d.get_collision_point()
 	var ray_cast_collision_safe_offset = ray_cast_collision_point.direction_to(global_position) * safteyOffset
-	var nav_point = ray_cast_collision_point + ray_cast_collision_safe_offset;
-	print(nav_point)
+	var nav_point = ray_cast_collision_point + ray_cast_collision_safe_offset
+	var right_colliding = $Right.is_colliding()
+	var left_colliding = $Left.is_colliding()
+	var up_colliding = $Up.is_colliding()
+	var down_colliding = $Down.is_colliding()
+	var player = get_tree().get_nodes_in_group("player")[0]
 
-	var direction = -(nav_point.direction_to(self.global_position)*32)
-	if $Left.is_colliding() or $Right.is_colliding():
-		direction.x = 0
-		print(direction)
-		nav_point = direction + global_position
+	
+	var x_colliding = left_colliding or right_colliding
+	var y_colliding = up_colliding or down_colliding
+	var cardinal_directions = {
+		'up': Vector2(0,-16)+global_position,
+		'down': Vector2(0,16)+global_position,
+		'right': Vector2(16,0)+global_position,
+		'left': Vector2(-16,0)+global_position
+		
+	}
+	var relative_ghost_position: Vector2 = global_position-player.global_position
 
+	print(relative_ghost_position)
+
+	if x_colliding and !y_colliding:
+		if (relative_ghost_position.y > 0 ):
+			nav_point = cardinal_directions.down
+		else:
+			nav_point = cardinal_directions.up	
+	elif y_colliding and !x_colliding:
+		if (relative_ghost_position.x > 0 ):
+			nav_point = cardinal_directions.right
+		else:
+			nav_point = cardinal_directions.left
+	elif y_colliding and x_colliding:
+		# Find the direction that is not colliding
+		var possible_directions = []
+
+		if !up_colliding:
+			possible_directions.append(cardinal_directions.up)
+		if !down_colliding:
+			possible_directions.append(cardinal_directions.down)
+		if !right_colliding:
+			possible_directions.append(cardinal_directions.right)
+		if !left_colliding:
+			possible_directions.append(cardinal_directions.left)
+
+		# Check which of the possible directions is furthest away from the player
+		if possible_directions.size() > 0:
+			var furthest_direction = possible_directions[0]
+			var max_distance = player.global_position.distance_to(furthest_direction)
+			
+			for adirection in possible_directions:
+				var adistance = player.global_position.distance_to(adirection)
+				if adistance > max_distance:
+					furthest_direction = adirection
+					max_distance = adistance
+
+			# Set the navigation point to the furthest direction
+			nav_point = furthest_direction
 		
-	if $Up.is_colliding() or $Down.is_colliding():
-		direction.y = 0
-		nav_point = direction + global_position
 		
-		
-	print(nav_point,global_position)
-	print('')
-		
+	
+	$DebugPot.global_position = nav_point
+	$GlobalDebugPot.global_position = global_position
+	$RayDebugPot.global_position = ray_cast_collision_point
+
 	
 	current_nav_path = tiles.get_navigation_path(global_position,nav_point)
 	

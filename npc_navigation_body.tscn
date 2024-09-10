@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4xl4vpmpt1ms"]
+[gd_scene load_steps=8 format=3 uid="uid://b4xl4vpmpt1ms"]
 
 [ext_resource type="Script" path="res://npc_navigation_body.gd" id="1_gvs3i"]
 [ext_resource type="Texture2D" uid="uid://oo16h8kyokd8" path="res://assets/npc2-Sheet.png" id="2_whtr5"]
+[ext_resource type="Texture2D" uid="uid://eoy858tmplx8" path="res://assets/pot.png" id="3_vkhvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfo6d"]
 size = Vector2(16, 16)
@@ -94,3 +95,21 @@ collision_mask = 4
 [node name="Down" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
 collision_mask = 4
+
+[node name="DebugPot" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vkhvo")
+
+[node name="GlobalDebugPot" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, 4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vkhvo")
+
+[node name="RayDebugPot" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vkhvo")
